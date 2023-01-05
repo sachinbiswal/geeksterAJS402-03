@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance JS Assignment</title>
+    <style>
+        .upper{
+            display: flex; 
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Shoping List</h1>
+    <div class="upper" >
+        <h3>Enter a new item:</h3>
+        <input type="text" name="" id="input" style="height: 50%;">
+        <button onclick="add()" >Add item</button>
+    </div>
+    <div class="lower" id="lower" >
+    </div>
+    <script>
+        
+        function add() {
+            var div1=document.createElement("div")
+            const lower=document.getElementById("lower")
+            const ult=document.createElement("li")
+            const name=document.getElementById("input").value
+            ult.textContent=name+" "
+            const buton=document.createElement("button")
+            buton.innerText="delete"
+            buton.addEventListener("click",(event)=>{
+                console.log(event);
+                div1.remove();
+            })
+
+            ult.appendChild(buton)
+            div1.appendChild(ult)
+            lower.appendChild(div1)
+            document.getElementById("input").value=""
+        }
+        
+    </script>
+</body>
+</html>
